@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">LOGIN</th>
+        <th scope="col">Roots</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th scope="row">{{user.login}}</th>
+        <td>{{user.roots}}</td>
+        <td><button type="button" (click)="DeleteUser(userr, user.login)" class="btn btn-danger float-left">Delete user</button></td>
+      </tr>
+    </tbody>
+  </table>

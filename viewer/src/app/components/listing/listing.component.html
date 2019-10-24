@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Filename</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doc of docs">
+        <th scope="row">{{doc.id}}</th>
+        <td>{{doc.name}}</td>
+        <td><button type="button" (click)="EditFile(doc.name, doc.text, doc.id)" class="btn btn-primary float-left">Edit</button></td>
+        <td><button type="button" (click)="DeleteFile(doc.owner, doc.name)" class="btn btn-danger float-left">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>

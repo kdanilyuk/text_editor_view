@@ -1,0 +1,33 @@
+<div class="container">
+    <angular-editor id="editor1" [(ngModel)]="htmlContent1" [config]="config1" (ngModelChange)="onChange($event)" 
+      (blur)="onBlur($event)">
+    </angular-editor>
+    <div>
+        <button type="button" (click)="RenameFile()" class="btn btn-default float-left">Rename Document</button>
+        <input *ngIf="isOnChangeFilename" type="text" class="form-control rounded-0" [(ngModel)]="newFileName" name="newFileName" required>
+        <button *ngIf="isOnChangeFilename" type="button" (click)="Raname();" class="btn btn-default float-left">Save Filename</button>
+        <button type="button" (click)="SaveToBase();" class="btn btn-default float-right">Save</button>
+    </div>
+</div>
+
+
+<!--<div class="container">
+    <form [formGroup]="form">
+        <div class="form-group">
+            <angular-editor id="editor1" [(ngModel)]="htmlContent1" [config]="editorConfig" (ngModelChange)="onChange($event)"
+            (blur)="onBlur($event)"></angular-editor>
+        </div>
+        <button type="button" (click)="SaveToBase();" class="btn btn-success float-right">Save</button>
+        <p class="html">
+            HTML Output:  {{ htmlContent }}
+        </p>
+    </form>
+</div>...
+
+<p class="html">
+      HTML Output:  {{ htmlContent1 }}
+    </p>
+
+-->
+
+  

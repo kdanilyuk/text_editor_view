@@ -1,0 +1,48 @@
+<div class="py-5">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <span class="anchor" id="formLogin"></span>
+  
+        <!-- form card login -->
+        <div class="card rounded-0">
+          <div class="card-header">
+            <h3 class="mb-0">Register</h3>
+          </div>
+          <div class="card-body">
+            <form class="form">
+              <div class="form-group">
+                <label for="uname1">Username</label>
+                <input type="text" [(ngModel)]="registerUserData.login" name="login" class="form-control rounded-0" required>
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" [(ngModel)]="registerUserData.password" name="password" class="form-control rounded-0"  required>
+              </div>
+              <div class="form-group">
+                <label>Repeat password</label>
+                <input type="password" [(ngModel)]="registerUserData.rPassword" name="rPassword" class="form-control rounded-0"  required>
+              </div>
+              <div *ngIf="!matchPasswords" class="form-group">
+                <label style="color:rgb(224, 45, 54)">Passwords shuold be identity</label>
+              </div>
+              <div *ngIf="!dataConsistency" class="form-group">
+                <label style="color:rgb(224, 45, 54)">Login and password can contains only numbers, letters, hyphens and underscores</label>
+              </div>
+              <div *ngIf="isAccountAlreadyExist" class="form-group">
+                <label style="color:rgb(224, 45, 54)">Account with this login already exist</label>
+              </div>
+              <div *ngIf="!validLengthOfData" class="form-group">
+                <label style="color:rgb(224, 45, 54)">Input data length must be in the range[3-255]</label>
+              </div>
+              <button type="button" (click)="checkForCorrect(); registerUser()" class="btn btn-primary float-right">Register</button>
+            </form>
+          </div>
+          <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+  
+      </div>
+  
+  
+    </div>
+  </div>
